@@ -69,7 +69,7 @@ void loop() {
 
   //led
   //led func
-  stop(true);
+  //stop(true);
   // left(true);
   // line(true);
   // for(int i = 0; i < LED_NUM; i++){
