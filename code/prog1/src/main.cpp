@@ -4,11 +4,11 @@
 #include "FastLED.h"
 
 
-#define LED_PIN 2
-#define LED_NUM 50
+#define LED_PIN 12
+#define LED_NUM 23
 #define LED_PIN1 13
 #define LED_NUM1 10
-#define LED_PIN2 2
+#define LED_PIN2 4
 #define LED_PIN3 14
 #define LED_NUM23 13
 
@@ -37,6 +37,7 @@ void setup() {
   mpu.initialize();
   // состояние соединения
   Serial.println(mpu.testConnection() ? "MPU6050 OK" : "MPU6050 FAIL");
+  FastLED.setMaxPowerInVoltsAndMilliamps(3.3, 500);
   
 
   //led
@@ -67,12 +68,40 @@ void loop() {
   Serial.println(mp[5]); 
 
   //led
-  FastLED.clear();
   //led func
-  stop(false);
-  left(true);
-  FastLED.show();
+  stop(true);
+  // left(true);
+  // for(int i = 0; i < LED_NUM; i++){
+  //   leds[i].setRGB(255, 255, 255);
+  // }
+  // for(int i = 0; i < LED_NUM1; i++){
+  //   leds1[i].setRGB(255, 255, 255);
+  // }
+  line(true);
+  // for(int i = 0; i < LED_NUM23; i++){
+  //   leds2[i].setRGB(255, 255, 255);
+  // }
+  // for(int i = 0; i < LED_NUM23; i++){
+  //   leds3[i].setRGB(255, 255, 255);
+  // }
   delay(300);
+  if (mp[1] > 30){
+    for(int i = 0; i < LED_NUM23; i++){
+      leds2[i].setRGB(255, 0, 0);
+    }
+  }else if(mp[1] < -30){
+    for(int i = 0; i < LED_NUM23; i++){
+      leds3[i].setRGB(255, 0, 0);
+    }
+  }else{
+    for(int i = 0; i < LED_NUM23; i++){
+      leds2[i].setRGB(255, 255, 255);
+    }
+    for(int i = 0; i < LED_NUM23; i++){
+      leds3[i].setRGB(255, 255, 255);
+    }
+  }
+  FastLED.show();
 }
 
 
