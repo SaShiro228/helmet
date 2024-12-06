@@ -59,12 +59,9 @@ void loop() {
   mp[3] = gx;
   mp[4] = gy;
   mp[5] = gz;
-  delay(5);
-  Serial.print(mp[0]); Serial.print('\t');
-  Serial.print(mp[1]); Serial.print('\t');
-  Serial.print(mp[2]); Serial.print('\t');
-  Serial.print(mp[3]); Serial.print('\t');
-  Serial.print(mp[4]); Serial.print('\t');
+  for(int i = 0; i < 5; i++){
+    Serial.print(mp[i]); Serial.print('\t');
+  }
   Serial.println(mp[5]); 
 
   //led
