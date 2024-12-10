@@ -69,18 +69,18 @@ void loop() {
   //stop(true);
   // left(true);
   // line(true);
-  // for(int i = 0; i < LED_NUM; i++){
-  //   leds[i].setRGB(255, 255, 255);
-  // }
-  // for(int i = 0; i < LED_NUM1; i++){
-  //   leds1[i].setRGB(255, 255, 255);
-  // }
-  // for(int i = 0; i < LED_NUM23; i++){
-  //   leds2[i].setRGB(255, 255, 255);
-  // }
-  // for(int i = 0; i < LED_NUM23; i++){
-  //   leds3[i].setRGB(255, 255, 255);
-  // }
+  for(int i = 0; i < LED_NUM; i++){
+    leds[i].setRGB(255, 255, 255);
+  }
+  for(int i = 0; i < LED_NUM1; i++){
+    leds1[i].setRGB(255, 255, 255);
+  }
+  for(int i = 0; i < LED_NUM23; i++){
+    leds2[i].setRGB(255, 255, 255);
+  }
+  for(int i = 0; i < LED_NUM23; i++){
+    leds3[i].setRGB(255, 255, 255);
+  }
   delay(100);
   if (mp[1] > 30){
     for(int i = 0; i < LED_NUM23; i++){
@@ -100,7 +100,7 @@ void loop() {
   }
     if (mp[0] < -50){
       stop(true);
-      line(true);
+      line(false);
   }else{
     stop(false);
     line(false);
