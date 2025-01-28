@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">helmet</string>
+    <string name="x">0</string>
+    <string name="y">0</string>
+    <string name="z">0</string>
+    <string name="speed">0</string>
+</resources>
