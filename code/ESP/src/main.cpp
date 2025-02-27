@@ -159,11 +159,11 @@ void line(bool flag){
 }
 
 String get_data(){
+  String data;
   if (ESP_BT.available()){
-    String data;
-    data = ESP_BT.readString();
-    return data;
+    data = ESP_BT.read();
   }
+  return data;
 }
 
 
